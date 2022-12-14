@@ -1,5 +1,5 @@
-// // Задание 1
-// // через if/else
+// Задание 1
+// через if/else
 function kolobok(name){
 
     if (name === 'дедушка')
@@ -20,7 +20,7 @@ kolobok('заяц')
 kolobok('лиса')
 kolobok('собака')
 
-// //через switch
+//через switch
 
 function kolobok(name){
     switch(name){
@@ -41,3 +41,19 @@ kolobok('лиса')
 kolobok('попугай')
 
 
+// Задание 2
+
+function newYear(characterName){
+   switch (characterName){
+    case 'Дед Мороз':
+        return console.log(`${characterName}! ${characterName}! ${characterName}!`)
+    case 'Снегурочка':
+        return console.log(`${characterName}! ${characterName}! ${characterName}!`)
+    default:
+        return console.log('Деда Мороза не существует')
+   }
+}
+
+newYear('Дед Мороз')
+newYear('Снегурочка')
+newYear('Санта Клаус')

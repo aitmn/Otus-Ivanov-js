@@ -9,12 +9,12 @@ const list = {
     Maria: 4
 }
 
-const scores = Object.values(list) //вернул значения в качестве массива
 
-function getScore(scores){
+function getScore(list){
+    const scores = Object.values(list)
     let sum = 0
     for (let i = 0; i < scores.length; i++)
     sum += scores[i]
     return sum
 }
-console.log(getScore(scores))
+console.log(getScore(list))

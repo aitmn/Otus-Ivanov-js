@@ -12,8 +12,8 @@ describe('testing https://reqres.in/api', () => {
         expect(resp._body.page).toEqual(1)
     })
 
-    test('Post request, create new user', async () => {
-        const resp = await user.create(config.body)
+    test.only('Post request, create new user', async () => {
+        const resp = await user.create()
         console.log(resp.status, resp._body)
         expect(resp.status).toEqual(201)
         

@@ -19,10 +19,13 @@ const user = {
         .get('/api/{resource}/2')
         .send()
     },
-    create: (newUser) => {
+    create: () => {
         return supertest(url)
         .post('/api/users')
-        .send(newUser)
+        .send({
+            name: 'Sasha',
+            job: 'QA'
+        })
     },
     list: (usersList) => {
         return supertest(url)

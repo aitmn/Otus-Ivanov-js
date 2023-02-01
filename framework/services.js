@@ -1,7 +1,7 @@
-import config from "./config";
-import supertest from 'supertest';
+import config from "./config"
+import supertest from 'supertest'
 
-const {url} = config;
+const {url} = config
 
 const user = {
     login: (payload) => {

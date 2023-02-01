@@ -4,6 +4,6 @@ const config = {
         email : 'davayzapilivay@yandex.ru',
         password : 'sas9uf0n'
     }
-
+ 
 }
 export default config

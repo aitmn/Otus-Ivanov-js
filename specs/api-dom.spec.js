@@ -8,7 +8,7 @@ describe('testing api-dom.tyumen-city.ru', () => {
           expect(res.status).toEqual(200)
           expect(res.body.data.user.email).toEqual('Davayzapilivay@yandex.ru')
           expect(typeof res.body.data.access_token).toEqual('string')
-    })
+    }),
     test('user auth with wrong password', async() =>{
         const res = await user.wrongPass()
           
@@ -21,7 +21,7 @@ describe('testing api-dom.tyumen-city.ru', () => {
             message: "WRONG_CREDENTIALS"
             }
         ])
-        })
+        }),
 
     test('user auth with invalid email', async() =>{
         const res = await user.wrongEmail()
@@ -35,7 +35,7 @@ describe('testing api-dom.tyumen-city.ru', () => {
               description: 'Поле «Email» должно быть действительным электронным адресом.'
             }
           ])
-           })
+           }),
 
     test('nonexistent user auth', async() =>{ 
         const res = await user.noExist()
@@ -48,7 +48,7 @@ describe('testing api-dom.tyumen-city.ru', () => {
               description: 'Пользователь не найден'
             }
           ])  
-    })
+    }),
     test('attach adress to user', async () =>{
         const token = await user.getAuthToken()
         const res = await user.addAdress(token)
@@ -73,7 +73,7 @@ describe('testing api-dom.tyumen-city.ru', () => {
         //console.log(res.body)
         expect (res.body.status).toEqual(true)
     }),
-    test.only('get objects by wrong id', async () =>{
+    test('get objects by wrong id', async () =>{
         const res = await user.wrongId()
         //console.log(res.body)
         expect(res.body.status).toEqual(false)

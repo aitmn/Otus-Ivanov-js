@@ -1,5 +1,1 @@
-Создано в рамках курса OTUS JavaScript QA Engineer
-
-++
-
-//comment
+Написание автотестов на JavaScript

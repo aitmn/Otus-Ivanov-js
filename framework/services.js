@@ -1,7 +1,7 @@
 import config from "./config";
 import supertest from 'supertest';
-const {url} = config;
 
+const {url} = config;
 
 const user = {
     login: (payload) => {
@@ -34,8 +34,4 @@ const user = {
     }
 }
 
-
-
-
 export default user
-

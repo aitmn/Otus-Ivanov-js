@@ -1,6 +1,6 @@
+import { resolvePreset } from '@babel/core'
 import config from '../framework/config.api-dom'
 import user from '../framework/services.api-dom'
-
 
   describe('testing api-dom.tyumen-city.ru', () => {
     test('user auth', async() =>{
@@ -100,9 +100,16 @@ import user from '../framework/services.api-dom'
     test('get objects by wrong id', async () =>{
       reporter
               .feature('objects')
-              
+
         const res = await user.wrongId()
         //console.log(res.body)
         expect(res.body.status).toEqual(false)
+    })
+    test('get object by invalid id', async () =>{
+      reporter
+              .feature('objects')
+
+        const res =await user.invalidId()
+        expect(res.body.status).toEqual(false)      
     })
 })

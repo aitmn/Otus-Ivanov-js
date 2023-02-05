@@ -1,7 +1,6 @@
 import config from '../framework/config'
 import user from '../framework/services'
 
-
 describe('testing https://reqres.in/api', () => {
 
     test('Get request, list users', async () => {

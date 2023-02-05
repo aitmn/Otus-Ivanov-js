@@ -5,5 +5,11 @@ module.exports = {
     transform: {"\\.[jt]sx?$": "babel-jest",},
     setupFilesAfterEnv: ['jest-allure/dist/setup'],
     testRunner: 'jest-jasmine2',
-    reporters: ['default', 'jest-allure']
+    reporters: ['default', 'jest-allure', [
+        'jest-html-reporter', {
+            'publicPath': './jest-html--report',
+            'filename': 'report.html'
+        }
+    ]
+]
 }

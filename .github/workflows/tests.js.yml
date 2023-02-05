@@ -36,14 +36,13 @@ jobs:
         if-no-files-found: error
         path: ./test-report.html
 
-    - name: send telegram message on push
+    - name: send telegram message on pull request
       uses: appleboy/telegram-action@master
       with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} created pull request:
-            Commit message: ${{ github.event.commits[0].message }}
             
             Repository: ${{ github.repository }}
             

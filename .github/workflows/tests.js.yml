@@ -33,4 +33,4 @@ jobs:
       with:
         name: report
         if-no-files-found: error
-        path: ./test-report-html
+        path: ./test-report.html

@@ -77,6 +77,12 @@ const user = {
         .get('/api/v1/poligons/suggest?kind_id=100500')
         .set('Accept','application/json')
         .send()
-}
+    },
+    invalidId: () =>{
+        return supertest(url)
+        .get('/api/v1/poligons/suggest?kind_id=ggwp')
+        .set('Accept','application/json')
+        .send()
+    }
 }
 export default user

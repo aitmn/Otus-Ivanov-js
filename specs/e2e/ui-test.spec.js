@@ -1,13 +1,16 @@
 const {test ,expect} = require ('@playwright/test');
 
+const credentials = {
+  username: 'standard_user',
+  password: 'secret_sauce'
+}
+const erorrMessage = ('.error-message-container')
+const cartBadge = ('.shopping_cart_badge')
+
 test.beforeEach(async ({ page }) => {
   await page.goto('https://www.saucedemo.com/');
 });
 
-  const credentials = {
-    username: 'standard_user',
-    password: 'secret_sauce'
-  }
 
 test('Has title', async({ page }) => {
   
@@ -19,7 +22,7 @@ test('login with no log and pass', async({ page }) => {
   await page.locator('#login-button').click()
   await expect(page).toHaveURL('https://www.saucedemo.com/')
   
-  const locator = page.locator('.error-message-container ')
+  const locator = page.locator(erorrMessage)
   await expect(locator).toContainText('Epic sadface: Username is required')
 });
 
@@ -29,7 +32,7 @@ test('login with wrong pass', async({ page }) => {
   await page.locator('#password').fill('1234')
   await page.locator('#login-button').click()
   
-  const locator = page.locator('.error-message-container ');
+  const locator = page.locator(erorrMessage);
   await expect(locator).toContainText('Epic sadface: Username and password do not match any user in this service');
 });
 
@@ -58,7 +61,7 @@ test('add to cart', async ({ page }) => {
   await page.locator('#login-button').click()
   await page.locator('#add-to-cart-sauce-labs-backpack').click()
 
-  const locator = page.locator('.shopping_cart_badge')
+  const locator = page.locator(cartBadge)
   await expect(locator).toBeVisible()
   await expect(locator).toContainText('1')
 });
@@ -72,6 +75,6 @@ test('delete from cart', async ({ page }) =>{
   await page.locator('.shopping_cart_link').click()
   await page.locator('#remove-sauce-labs-backpack').click()
   
-  const locator = page.locator('.shopping_cart_badge')
+  const locator = page.locator(cartBadge)
   await expect(locator).toBeHidden()
 })

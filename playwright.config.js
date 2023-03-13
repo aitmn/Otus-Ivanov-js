@@ -1,5 +1,10 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+
+  const credentials = {
+  username: 'standard_user',
+  password: 'secret_sauce'
+}
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -90,3 +95,4 @@ module.exports = defineConfig({
   // },
 });
 
+export default credentials;

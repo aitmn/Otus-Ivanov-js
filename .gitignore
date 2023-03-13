@@ -7,3 +7,4 @@ allure-results
 /test-results/
 /playwright-report/
 /playwright/.cache/
+test-report.html
